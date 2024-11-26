@@ -1,0 +1,39 @@
+// Função para escolher 10 cores aleatórias a partir de um vetor de cores
+function escolher10CoresAleatorias(cores) {
+    const coresAleatorias = [];
+    const coresDisponiveis = [...cores]; // Faz uma cópia do vetor original para não modificar o original
+
+    // Garantir que escolhemos 10 cores aleatórias
+    for (let i = 0; i < 10; i++) {
+        // Seleciona um índice aleatório
+        const indiceAleatorio = Math.floor(Math.random() * coresDisponiveis.length);
+        // Adiciona a cor aleatória ao array de cores aleatórias
+        coresAleatorias.push(coresDisponiveis[indiceAleatorio]);
+        // Remove a cor selecionada para garantir que não seja escolhida novamente
+        coresDisponiveis.splice(indiceAleatorio, 1);
+    }
+
+    return coresAleatorias;
+}
+
+// Exemplo de vetor de cores (após ter sido obtido da função anterior)
+const cores = [
+    "rgb(255, 255, 255)", 
+    "rgb(0, 0, 0)", 
+    "rgb(255, 0, 0)", 
+    "rgb(0, 0, 255)", 
+    "rgb(0, 255, 0)", 
+    "rgb(255, 255, 0)", 
+    "rgb(255, 0, 255)", 
+    "rgb(0, 255, 255)", 
+    "rgb(128, 128, 128)", 
+    "rgb(255, 165, 0)",
+    "rgb(255, 192, 203)", 
+    "rgb(0, 128, 0)"
+];
+
+// Chama a função para obter 10 cores aleatórias
+const coresSelecionadas = escolher10CoresAleatorias(cores);
+
+// Exibe as 10 cores selecionadas no console
+console.log(coresSelecionadas);
