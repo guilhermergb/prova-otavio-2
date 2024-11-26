@@ -1,0 +1,22 @@
+function obterCoresDaPagina() {
+    const cores = new Set(); // Usamos um Set para garantir que as cores sejam únicas
+    const elements = document.querySelectorAll('*'); // Seleciona todos os elementos da página
+
+    // Itera sobre todos os elementos
+    elements.forEach(element => {
+        // Obtém as propriedades de cor dos elementos
+        const bgColor = window.getComputedStyle(element).backgroundColor;
+        const color = window.getComputedStyle(element).color;
+        const borderColor = window.getComputedStyle(element).borderColor;
+
+        // Adiciona as cores ao Set, ignorando transparência
+        if (bgColor !== 'rgba(0, 0, 0, 0)') cores.add(bgColor.toLowerCase());
+        if (color !== 'rgba(0, 0, 0, 0)') cores.add(color.toLowerCase());
+        if (borderColor !== 'rgba(0, 0, 0, 0)') cores.add(borderColor.toLowerCase());
+    });
+
+    // Converte o Set de cores para um array e exibe no console
+    console.log(Array.from(cores));
+}
+
+obterCoresDaPagina(); // Chama a função para coletar todas as cores
