@@ -1,0 +1,24 @@
+// Função para escolher uma cor aleatória entre as 10 cores selecionadas e imprimi-la no console
+function escolherCorAleatoria(coresAleatorias) {
+    // Gera um índice aleatório
+    const indiceAleatorio = Math.floor(Math.random() * coresAleatorias.length);
+    // Imprime a cor selecionada no console
+    console.log(coresAleatorias[indiceAleatorio]);
+}
+
+// Exemplo de vetor de 10 cores aleatórias (obtido a partir da função anterior)
+const coresAleatorias = [
+    "rgb(255, 255, 255)", 
+    "rgb(0, 0, 0)", 
+    "rgb(255, 0, 0)", 
+    "rgb(0, 0, 255)", 
+    "rgb(0, 255, 0)", 
+    "rgb(255, 255, 0)", 
+    "rgb(255, 0, 255)", 
+    "rgb(0, 255, 255)", 
+    "rgb(128, 128, 128)", 
+    "rgb(255, 165, 0)"
+];
+
+// Chama a função para escolher uma cor aleatória entre as 10 cores
+escolherCorAleatoria(coresAleatorias);
